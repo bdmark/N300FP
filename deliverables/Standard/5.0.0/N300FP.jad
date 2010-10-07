@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+RIM-COD-Module-Name: N300FP
+RIM-COD-Module-Dependencies: net_rim_cldc
+MIDlet-Jar-Size: 0
+MIDlet-1: ,,
+RIM-COD-Creation-Time: 1286424777
+MIDlet-Jar-URL: N300FP.jar
+RIM-COD-URL: N300FP.cod
+RIM-COD-SHA1: e8 d8 34 d1 29 20 bf 20 52 d8 7d 23 6c 5e 06 2e a6 90 5e e4
+RIM-COD-Size: 688
+MicroEdition-Configuration: CLDC-1.1
+MIDlet-Version: 1.0.0
+MIDlet-Name: N300FP
+MIDlet-Vendor: BlackBerry Developer
+MicroEdition-Profile: MIDP-2.0
+RIM-MIDlet-Flags-1: 0
