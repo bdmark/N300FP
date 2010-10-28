@@ -3,6 +3,7 @@
 	<name>N300FP</name>
 	<comment></comment>
 	<projects>
+		<project>PhoneGap</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

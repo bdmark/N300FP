@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQTouch Documentation App</title>
+	<meta name="description" content="A basic example app written in jQTouch">
+	<meta name="author" content="Christopher McCulloh">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<link rel="stylesheet" href="jqtouch/jqtouch.css?v=1">
+	<link rel="stylesheet" href="themes/jqt/theme.css?v=1">
+	<style type="text/css">
+		#about, .content {
+			padding: 100px 10px 40px;
+			text-shadow: rgba(255, 255, 255, 0.3) 0px -1px 0;
+			font-size: 13px;
+			text-align: center;
+			background: #161618;
+		}
+		p {
+			margin-bottom: 8px;
+			padding: 0px 40px;/* Added this so paragraphs wouldn't squish up against the edge */
+		}
+		a {
+			color: #fff;
+			font-weight: bold;
+			text-decoration: none;
+		}
+	</style>
+	<script src="jqtouch/jquery-1.4.2.js?v=1" type="application/x-javascript" charset="utf-8"></script>
+	<script src="jqtouch/jqtouch.js?v=1" type="application/x-javascript" charset="utf-8"></script>
+	<script type="application/x-javascript">
+		var $jqt = new jQuery.jQTouch({
+				icon: 'jqtouch.png',
+				statusBar: 'black-translucent',
+				preloadImages: [
+					'themes/jqt/img/chevron_white.png'
+					, 'themes/jqt/img/bg_row_select.gif'
+					, 'themes/jqt/img/back_button_clicked.png'
+					, 'themes/jqt/img/button_clicked.png'
+					]
+		});
+
+	</script>
+</head>
+<body>
+	<div id="jqt">
+		<!-- HOME -->
+		<div id="home" class="current">
+			<div class="toolbar">
+				<h1>jQTouch</h1>
+				<a class="button slideup" id="infoButton" href="#about">About</a>
+			</div>
+			<h2>Overview</h2>
+			<p>This is an example jQTouch that attempts to document the basic structure of a JQTouch App</p>
+			<h2>Getting Started</h2>
+			<p>A jQTouch app consists of one html page. Everything that is going to show in the app must be inside of a div with the id "jqt"</p>
+			<pre>
+				&lt;div id="jqt">&lt;/div>
+			</pre>
+			<p>Each "page" is just a div inside of that div.</p>
+			<p>Click the links below to further explore each topic</p>
+			<h2>Examples</h2>
+			<ul class="rounded">
+				<li class="arrow"><a href="#pages">Pages</a> <small class="counter">7</small></li>
+				<li class="arrow"><a href="#toolbars">Toolbars</a> <small class="counter">4</small></li>
+				<li class="arrow"><a href="#lists">Lists</a> <small class="counter">5</small></li>
+				<li class="arrow"><a href="#forms">Forms</a> <small class="counter">1</small></li>
+			</ul>
+			<h2>AJAX</h2>
+			<ul class="rounded">
+				<li class="arrow"><a href="loadByAjax.html">AJAX</a> <small class="counter">1</small></li>
+				<li class="arrow"><a href="#jsonp">JSONP</a> <small class="counter">1</small></li>
+				<li class="arrow"><a href="#yahooPipes">Yahoo Pipes</a> <small class="counter">1</small></li>
+			</ul>
+			<!--ul class="individual">
+					<li><a href="#about">About</a></li>
+					<li><a href="#about">About</a></li>
+			</ul-->
+			<div class="info">
+				<p>This is a jQTouch example app. This is a div with an info class.</p>
+			</div>
+		</div>
+
+		<!-- ABOUT -->
+		<div id="about" class="selectable">
+			<p>This is a jQTouch documentation app.</p>
+			<p>The purpose of this app is to document jQTouch.</p>
+			<p>This text is inside of a div with the id "about" and the class "selectable"</p>
+			<p><br /><br /><a href="#" class="grayButton goback">Close</a></p>
+		</div>
+
+
+
+	<!-- PAGES DOCUMENTATION-->
+		<div id="pages">
+			<div class="toolbar">
+				<h1>Pages</h1>
+				<a href="#" class="back">Home</a>
+			</div>
+			<div class="content">
+				<p>Pages are just divs with an id.</p>
+				<p>&lt;div id="#divId"&gt;Page contents here&lt;/a&gt;</p>
+			</div>
+			<ul class="plastic">
+				<li class="forward"><a href="#pages2">Next</a></li>
+			</ul>
+			<div class="content"></div>
+		</div>
+		<div id="pages2">
+			<div class="toolbar">
+				<h1>Pages 2</h1>
+				<a href="#" class="back">Back</a>
+			</div>
+			<div class="content">
+				<p>If you want to link to a page, make the page div's id the target of the link prepended with a hash sign:</p>
+				<p>&lt;a href="#divId"&gt;link text&lt;/a&gt;</p>
+				<p><br /><br /><a href="#pages3" class="grayButton">Next (doesn't work)</a></p>
+			</div>
+			<ul class="plastic">
+				<li class="forward"><a href="#pages3">Next (works)</a></li>
+			</ul>
+			<div class="content"></div>
+		</div>
+		<div id="pages3">
+			<div class="toolbar">
+				<h1>Pages 3</h1>
+				<a href="#" class="back">Back</a>
+			</div>
+			<div class="content">
+				<p>Links to pages only work if they are in an unordered list that is a direct descendant of the page div.</p>
+				<pre style="text-align: left;">
+		&lt;div id="pages2"&gt;
+			&lt;div class="toolbar"&gt;
+				&lt;h1&gt;Pages 2&lt;/h1&gt;
+				&lt;a href="#" class="back"&gt;Back&lt;/a&gt;
+			&lt;/div&gt;
+			&lt;div class="content"&gt;
+				&lt;p&gt;If you want to link to a page, make the page div's id the target of the link prepended with a hash sign:&lt;/p&gt;
+				&lt;p&gt;&lt;a href="#divId"&gt;link text&lt;/a&gt;&lt;/p&gt;
+				&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;a href="#pages3"&gt;Next (doesn't work)&lt;/a&gt;&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;ul class="plastic"&gt;
+				&lt;li class="forward"&gt;&lt;a href="#pages3" class="grayButton"&gt;Next (works)&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+				</p>
+				<p>Otherwise they just take you back to the previous page</p>
+			</div>
+			<ul class="plastic">
+				<li class="forward"><a href="#pages4">Next</a></li>
+			</ul>
+			<div class="content"></div>
+		</div>
+		<div id="pages4">
+			<div class="toolbar">
+				<h1>Pages 4</h1>
+				<a href="#" class="back">Back</a>
+			</div>
+			<div class="content">
+				<p>Each time you go to a new page, the page you were on is added to a history. Any "Back" buttons will simply take you one step back in the page history. It's easy to think of pages as being in some sort of hierarchy because of the way that the lists make it feel like you are drilling down. You might expect the back button to take you up one step in the hierarchy. They don't. They just take you back one step in the history.</p>
+				<p>To see this in action, use the navigation at the bottom of this page and page 5 to go back and forth between this page and page 5 a few times and then click on the "back" button several times.</p>
+			</div>
+			<ul class="plastic">
+				<li class="forward"><a href="#pages5">Next</a></li>
+			</ul>
+			<div class="content"></div>
+		</div>
+		<div id="pages5">
+			<div class="toolbar">
+				<h1>Pages 5</h1>
+				<a href="#" class="back">Back</a>
+			</div>
+			<div class="content">
+				<p>&nbsp;</p>
+			</div>
+			<ul class="plastic">
+				<li class="forward"><a href="#pages4">Back to Page 4</a></li>
+				<li class="forward"><a href="#pages6">On to Page 6</a></li>
+			</ul>
+			<div class="content"></div>
+		</div>
+		<div id="pages6">
+			<div class="toolbar">
+				<h1>Pages 6</h1>
+				<a href="#" class="back">Back</a>
+			</div>
+			<div class="content">
+				<p>To ensure pages load full screen without the mobile safari ui elements at top and bottom, the user will need to save the app to their home-screen.</p>
+			</div>
+			<ul class="plastic">
+				<li class="forward"><a href="#pages7">Next</a></li>
+			</ul>
+			<div class="content"></div>
+		</div>
+		<div id="pages7">
+			<div class="toolbar">
+				<h1>Pages 6</h1>
+				<a href="#" class="back">Back</a>
+			</div>
+			<div class="content">
+				<p>If a page is too short to take up the entire height of the screen, the normal browser URL bar will show (with refresh/back buttons and URL field etc) as it does on this page. This can be annoying and disconcerting, so always do something to make sure the page is taller than the screen</p>
+			</div>
+			<ul class="roundend">
+				<li><a href="#home">Home</a></li>
+			</ul>
+		</div>
+
+
+
+	<!--TOOLBARS DOCUMENTATION -->
+		<div id="toolbars">
+			<div class="toolbar">
+				<h1>Toolbars</h1>
+				<a href="#" class="back">Home</a>
+			</div>
+				<h2>Toolbar Overview</h2>
+				<p>Toolbars are completely optional, but highly recommended for most pages since they take the place of the browser bar usually and are expected to supply the "back button" functionality.</p>
+				<h2>Toolbar Titles</h2>
+				<p>There isn't much room on the toolbar for titles. You only get 150 pixels and anything after that is dynamically cut of with ellipses</p>
+				<h2>Toolbar Buttons</h2>
+				<p>Adding buttons to the toolbar is a little bit mystifying. If you simply add a link to the page (anywhere) with the class "button" it will throw a non-functioning button up in the toolbar (the button will just take you back to the homepage no matter what). I'll add one right here as example, but you won't see it here, it'll be up in the toolbar!</p>
+				<a class="button" href="#toolbars2">Next Page</a>
+				<p>It says "Next Page" but just takes you back to the homepage instead. Click the link below to continue on...</p>
+			<ul class="plastic">
+				<li class="forward"><a href="#toolbars2">Next</a></li>
+			</ul>
+		</div>
+		<div id="toolbars2">
+			<div class="toolbar">
+				<h1>Toolbars</h1>
+				<a href="#" class="back">Back</a>
+				<a href="#home" class="button">Home</a>
+			</div>
+				<h2>Toolbar Buttons Continued</h2>
+				<p>You basically have two choices for toolbar button styles.</p>
+				<p>It doesn't matter what you link them to, they just function as "back" buttons no matter what unless you link them to the "home" screen ("#home")</p>
+				<p>You can only have two buttons in the toolbar at the same time. One right and one left. They start stacking on top of eachother if you try and add more</p>
+			<ul class="plastic">
+				<li class="forward"><a href="#toolbarsButton">Button</a></li>
+				<li class="forward"><a href="#toolbarsBack">Back</a></li>
+			</ul>
+		</div>
+		<div id="toolbarsButton">
+			<div class="toolbar">
+				<h1>Toolbars Button</h1>
+				<a href="#" class="button">Button</a>
+				<a href="#" class="back">Back</a>
+			</div>
+			<h2>"button" button</h2>
+			<p>&lt;a href="#" class="button">Button&lt;/a></p>
+			<p>Shows up with rounded corners and right aligned.</p>
+		</div>
+		<div id="toolbarsBack">
+			<div class="toolbar">
+				<h1>Toolbars Back</h1>
+				<a href="#" class="back">Back</a>
+			</div>
+			<h2>"back" button</h2>
+			<p>&lt;a href="#" class="back">Back&lt;/a></p>
+			<p>Shows up with rounded corners on the right, arrow shaped on the left and left aligned.</p>
+		</div>
+
+
+
+
+
+
+
+	<!-- LISTS DOCUMENTATION -->
+		<div id="lists">
+			<div class="toolbar">
+					<h1>List</h1>
+					<a href="#" class="back">Back</a>
+			</div>
+			<h2>Overview</h2>
+			<p>Lists are kind of the core UI component of jQTouch. It's almost as if they expect everything to be a list. Woe to you if you don't want your app to consist almost entirely of lists. There isn't even a basic Tab-bar construct.</p>
+			<h2>List Types</h2>
+			<ul class="plastic">
+				<li class="arrow"><a href="#listsPlastic">Plastic</a></li>
+				<li class="arrow"><a href="#listsMetal">Metal</a></li>
+				<li class="arrow"><a href="#listsRounded">Rounded</a></li>
+				<li class="arrow"><a href="#listsEdge">Edge to Edge</a></li>
+			</ul>
+		</div>
+
+		<div id="listsPlastic">
+			<div class="toolbar">
+					<h1>List Plastic</h1>
+					<a href="#" class="back">Back</a>
+			</div>
+			<h2>Lists Plastic</h2>
+			<p>
+				<pre>
+				&lt;ul class="plastic">
+					&lt;li class="arrow">&lt;a href="#">Sample&lt;/a>&lt;/li>
+					&lt;li class="arrow">&lt;a href="#">Sample&lt;/a>&lt;/li>
+					&lt;li class="arrow">&lt;a href="#">Sample&lt;/a>&lt;/li>
+					&lt;li class="arrow">&lt;a href="#">Sample&lt;/a>&lt;/li>
+				&lt;/ul>
+				</pre>
+			</p>
+			<ul class="plastic">
+				<li class="arrow"><a href="#">Sample</a></li>
+				<li class="arrow"><a href="#">Sample</a></li>
+				<li class="arrow"><a href="#">Sample</a></li>
+				<li class="arrow"><a href="#">Sample</a></li>
+			</ul>
+		</div>
+		<div id="listsMetal">
+			<div class="toolbar">
+					<h1>List Metal</h1>
+					<a href="#" class="back">Back</a>
+			</div>
+			<h2>Lists Metal</h2>
+			<p>
+				<pre>
+				&lt;ul class="metal">
+					&lt;li class="arrow">&lt;a href="#">&lt;small>small&lt;/small> Plain &lt;em>em&lt;/em>&lt;/a>&lt;/li>
+					&lt;li class="arrow">&lt;a href="#">&lt;small>small&lt;/small> Plain &lt;em>em&lt;/em>&lt;/a>&lt;/li>
+					&lt;li class="arrow">&lt;a href="#">&lt;small>small&lt;/small> Plain &lt;em>em&lt;/em>&lt;/a>&lt;/li>
+					&lt;li class="arrow">&lt;a href="#">&lt;small>small&lt;/small> Plain &lt;em>em&lt;/em>&lt;/a>&lt;/li>
+					&lt;li class="arrow">&lt;a href="#">&lt;small>small&lt;/small> Plain &lt;em>em&lt;/em>&lt;/a>&lt;/li>
+				&lt;/ul>
+				</pre>
+			</p>
+			<ul class="metal">
+				<li class="arrow"><a href="#"><small>small</small> Plain <em>em</em></a></li>
+				<li class="arrow"><a href="#"><small>small</small> Plain <em>em</em></a></li>
+				<li class="arrow"><a href="#"><small>small</small> Plain <em>em</em></a></li>
+				<li class="arrow"><a href="#"><small>small</small> Plain <em>em</em></a></li>
+				<li class="arrow"><a href="#"><small>small</small> Plain <em>em</em></a></li>
+			</ul>
+		</div>
+		<div id="listsRounded">
+			<div class="toolbar">
+					<h1>List Rounded</h1>
+					<a href="#" class="back">Back</a>
+			</div>
+			<h2>Lists Rounded</h2>
+			<p>
+				<pre>
+				&lt;ul class="rounded">
+					&lt;li class="arrow">&lt;a href="#">Sample&lt;/a> &lt;small class="counter">4&lt;/small>&lt;/li>
+					&lt;li class="arrow">&lt;a href="#">Sample&lt;/a> &lt;small class="counter">8&lt;/small>&lt;/li>
+					&lt;li class="arrow">&lt;a href="#">Sample&lt;/a> &lt;small class="counter">3&lt;/small>&lt;/li>
+					&lt;li class="arrow">&lt;a href="#">Sample&lt;/a> &lt;small class="counter">3&lt;/small>&lt;/li>
+					&lt;li class="arrow">&lt;a href="#">Sample&lt;/a> &lt;small class="counter">4&lt;/small>&lt;/li>
+					&lt;li class="arrow">&lt;a href="#">Sample&lt;/a> &lt;small class="counter">2&lt;/small>&lt;/li>
+				&lt;/ul>
+				</pre>
+			</p>
+
+			<ul class="rounded">
+				<li class="arrow"><a href="#">Sample</a> <small class="counter">4</small></li>
+				<li class="arrow"><a href="#">Sample</a> <small class="counter">8</small></li>
+				<li class="arrow"><a href="#">Sample</a> <small class="counter">3</small></li>
+				<li class="arrow"><a href="#">Sample</a> <small class="counter">3</small></li>
+				<li class="arrow"><a href="#">Sample</a> <small class="counter">4</small></li>
+				<li class="arrow"><a href="#">Sample</a> <small class="counter">2</small></li>
+			</ul>
+		</div>
+		<div id="listsEdge">
+			<div class="toolbar">
+					<h1>List Edge</h1>
+					<a href="#" class="back">Back</a>
+			</div>
+			<h2>Lists Edge to Edge</h2>
+			<p>
+				<pre>
+				&lt;ul class="edgetoedge">
+					&lt;li class="sep">F&lt;/li>
+					&lt;li>&lt;a href="#">Flintstone, &lt;em>Fred&lt;/em>&lt;/a>&lt;/li>
+					&lt;li>&lt;a href="#">Flintstone, &lt;em>Pebble&lt;/em>&lt;/a>&lt;/li>
+					&lt;li>&lt;a href="#">Flintstone, &lt;em>Wilma&lt;/em>&lt;/a>&lt;/li>
+					&lt;li class="sep">J&lt;/li>
+					&lt;li>&lt;a href="#">Jetson, &lt;em>Elroy&lt;/em>&lt;/a>&lt;/li>
+					&lt;li>&lt;a href="#">Jetson, &lt;em>George&lt;/em>&lt;/a>&lt;/li>
+					&lt;li>&lt;a href="#">Jetson, &lt;em>Jane&lt;/em>&lt;/a>&lt;/li>
+					&lt;li>&lt;a href="#">Jetson, &lt;em>Judy&lt;/em>&lt;/a>&lt;/li>
+					&lt;li class="sep">R&lt;/li>
+					&lt;li>&lt;a href="#">Rubble, &lt;em>Bambam&lt;/em>&lt;/a>&lt;/li>
+					&lt;li>&lt;a href="#">Rubble, &lt;em>Barney&lt;/em>&lt;/a>&lt;/li>
+					&lt;li>&lt;a href="#">Rubble, &lt;em>Betty&lt;/em>&lt;/a>&lt;/li>
+				&lt;/ul>
+				</pre>
+			</p>
+			<ul class="edgetoedge">
+				<li class="sep">F</li>
+				<li><a href="#">Flintstone, <em>Fred</em></a></li>
+				<li><a href="#">Flintstone, <em>Pebble</em></a></li>
+				<li><a href="#">Flintstone, <em>Wilma</em></a></li>
+				<li class="sep">J</li>
+				<li><a href="#">Jetson, <em>Elroy</em></a></li>
+				<li><a href="#">Jetson, <em>George</em></a></li>
+				<li><a href="#">Jetson, <em>Jane</em></a></li>
+				<li><a href="#">Jetson, <em>Judy</em></a></li>
+				<li class="sep">R</li>
+				<li><a href="#">Rubble, <em>Bambam</em></a></li>
+				<li><a href="#">Rubble, <em>Barney</em></a></li>
+				<li><a href="#">Rubble, <em>Betty</em></a></li>
+			</ul>
+		</div>
+
+	<!-- FORMS -->
+		<div id="forms">
+			<div class="toolbar">
+				<h1>Forms</h1>
+				<a href="#" class="back">Back</a>
+			</div>
+			<h2></h2>
+
+			<h2>Example Code</h2>
+			<p>
+				<pre>
+				&lt;form>
+					&lt;ul class="edit rounded">
+						&lt;li>&lt;input type="text" name="name" placeholder="Text" id="some_name" />&lt;/li>
+						&lt;li>&lt;input type="search" name="search" placeholder="Search" id="some_name" />&lt;/li>
+						&lt;li>&lt;input type="tel" name="phone" placeholder="Phone" id="some_name"	/>&lt;/li>
+						&lt;li>&lt;input type="number" name="zip" placeholder="Numbers" id="some_name" />&lt;/li>
+						&lt;li>&lt;textarea placeholder="Textarea" >&lt;/textarea>&lt;/li>
+						&lt;li>Sample Toggle &lt;span class="toggle">&lt;input type="checkbox" />&lt;/span>&lt;/li>
+						&lt;li>
+							&lt;select id="lol">
+								&lt;optgroup label="Swedish Cars">
+									&lt;option value ="volvo">Volvo&lt;/option>
+									&lt;option value ="saab">Saab&lt;/option>
+								&lt;/optgroup>
+								&lt;optgroup label="German Cars">
+									&lt;option value ="mercedes">Mercedes&lt;/option>
+									&lt;option value ="audi">Audi&lt;/option>
+								&lt;/optgroup>
+							&lt;/select>
+						&lt;/li>
+						&lt;li>&lt;input type="password" name="some_name" value="iphonedelcopon" id="some_name" />&lt;/li>
+						&lt;li>&lt;input type="checkbox" name="some_name" value="Hello" id="some_name" title="V8 Engine Type" />&lt;/li>
+						&lt;li>&lt;input type="checkbox" name="some_name" value="Hello" checked="checked" id="some_name" title="V12 Engine Type" />&lt;/li>
+						&lt;li>&lt;input type="radio" name="some_name" value="Hello" id="some_name" title="Only cars" />&lt;/li>
+						&lt;li>&lt;input type="radio" name="some_name" value="Hello" id="some_name" title="Only motorbikes" />&lt;/li>
+					&lt;/ul>
+				&lt;/form>
+				</pre>
+			</p>
+			<h2>Example</h2>
+			<form>
+				<ul class="edit rounded">
+					<li><input type="text" name="name" placeholder="Text" id="some_name" /></li>
+					<li><input type="search" name="search" placeholder="Search" id="some_name" /></li>
+					<li><input type="tel" name="phone" placeholder="Phone" id="some_name"	/></li>
+					<li><input type="number" name="zip" placeholder="Numbers" id="some_name" /></li>
+					<li><textarea placeholder="Textarea" ></textarea></li>
+					<li>Sample Toggle <span class="toggle"><input type="checkbox" /></span></li>
+					<li>
+						<select id="lol">
+							<optgroup label="Swedish Cars">
+								<option value ="volvo">Volvo</option>
+								<option value ="saab">Saab</option>
+							</optgroup>
+							<optgroup label="German Cars">
+								<option value ="mercedes">Mercedes</option>
+								<option value ="audi">Audi</option>
+							</optgroup>
+						</select>
+					</li>
+					<li><input type="password" name="some_name" value="iphonedelcopon" id="some_name" /></li>
+					<li><input type="checkbox" name="some_name" value="Hello" id="some_name" title="V8 Engine Type" /></li>
+					<li><input type="checkbox" name="some_name" value="Hello" checked="checked" id="some_name" title="V12 Engine Type" /></li>
+					<li><input type="radio" name="some_name" value="Hello" id="some_name" title="Only cars" /></li>
+					<li><input type="radio" name="some_name" value="Hello" id="some_name" title="Only motorbikes" /></li>
+				</ul>
+			</form>
+		</div>
+
+
+		<!-- JSONP -->
+		<div id="jsonp">
+			<div class="toolbar">
+					<h1>JSONP</h1>
+					<a href="#" class="back">Back</a>
+			</div>
+			<h2>Overview</h2>
+			<p>JSONP allows you to make cross-domain requests as long as the server you are requesting from will respond with JSON</p>
+			<h2>Example</h2>
+			<p><a href="#" id="tryJSONP" class="greenButton">Do JSONP</a></p>
+			<p class="hidden">The following was loaded using JSONP:</p>
+			<ul id="jsonpTarget" class="plastic hidden"></p>
+			<script type="text/javascript">
+				// http://develop.github.com/p/repo.html
+				GitHubAPI = {};
+
+				GitHubAPI.Repos = function(username, callback){
+					requestURL = "http://github.com/api/v2/json/repos/show/" + username + "?callback=?";
+					jQuery.getJSON(requestURL, function(json, status){
+						callback(json.repositories, status);
+					});
+				};
+
+				jQuery("#tryJSONP").bind("click", function(e){
+					e.preventDefault();
+					jQuery('#jsonp :hidden').show();
+					jQuery('#jsonpTarget').empty().html('<li>loading...</li>');
+
+					GitHubAPI.Repos("cmcculloh", function(json, status){
+						var content = [];
+						jQuery.each(json, function(i){
+							content.push('<li class="project">');
+							content.push(this['name']);
+							content.push('</li>');
+						});
+						jQuery("#jsonpTarget").html(content.join(''));
+					});
+				});
+			</script>
+			<h2>The Code</h2>
+			<pre>
+&lt;p>&lt;a href="#" id="tryJSONP" class="greenButton">Do JSONP&lt;/a>&lt;/p>
+&lt;p class="hidden">The following was loaded using JSONP:&lt;/p>
+&lt;ul id="jsonpTarget" class="plastic hidden">&lt;/p>
+&lt;script type="text/javascript">
+	// http://develop.github.com/p/repo.html
+	GitHubAPI = {};
+
+	GitHubAPI.Repos = function(username, callback){
+		requestURL = "http://github.com/api/v2/json/repos/show/" + username + "?callback=?";
+		jQuery.getJSON(requestURL, function(json, status){
+			callback(json.repositories, status);
+		});
+	};
+
+	jQuery("#tryJSONP").bind("click", function(e){
+		e.preventDefault();
+		jQuery('#jsonp :hidden').show();
+		jQuery('#jsonpTarget').empty().html('&lt;li>loading...&lt;/li>');
+
+		GitHubAPI.Repos("cmcculloh", function(json, status){
+			var content = [];
+			jQuery.each(json, function(i){
+				content.push('&lt;li class="project">');
+				content.push(this['name']);
+				content.push('&lt;/li>');
+			});
+			jQuery("#jsonpTarget").html(content.join(''));
+		});
+	});
+&lt;/script>
+			</pre>
+		</div>
+
+
+
+
+		<!-- YAHOO PIPES -->
+		<div id="yahooPipes">
+			<div class="toolbar">
+					<h1>JSONP</h1>
+					<a href="#" class="back">Back</a>
+			</div>
+			<h2>Overview</h2>
+			<p>Yahoo Pipes can digest any URL and spit out contents you specify (to a certain extent) as JSON</p>
+			<h2>Example</h2>
+			<p><a href="#" id="tryYahooPipes" class="greenButton">Do Yahoo Pipe</a></p>
+			<p class="hidden">The following was loaded using JSONP from Yahoo pipes:</p>
+			<ul id="yahooPipesTarget" class="rounded hidden"></ul>
+			<h2>The Code</h2>
+			<pre>
+&lt;p>&lt;a href="#" id="tryYahooPipes" class="greenButton">Do Yahoo Pipe&lt;/a>&lt;/p>
+&lt;ul id="yahooPipesTarget" class="rounded hidden">&lt;/ul>
+
+&lt;script type="text/javascript">
+	yahooPipes = {};
+
+	yahooPipes.getDeals = function(callback){
+		requestURL = "http://pipes.yahoo.com/pipes/pipe.run?_id=5c2b38b0d1c8cc3a2439662af944d212&_render=json&_callback=?";
+		jQuery.getJSON(requestURL, function(json, status){
+			console.dir(json);
+			callback(json.value.items, status);
+		});
+	};
+
+	jQuery("#tryYahooPipes").bind("click", function(e){
+		e.preventDefault();
+		jQuery('#yahooPipes :hidden').show();
+		jQuery('#yahooPipesTarget').empty().html('&lt;li>loading...&lt;/li>');
+
+		yahooPipes.getDeals(function(json, status){
+			var theHTML, $titles;
+
+			theHTML = [];
+			contentHTML = json[0].content;
+
+			//sanitize. Remove fancy quotes and make lower case.
+			contentHTML = jQuery.replaceByCharCode(contentHTML);
+			contentHTML = contentHTML.toLowerCase();
+			contentHTML = '&lt;div>' + contentHTML + '&lt;/div>';
+
+			$deals = jQuery(contentHTML).find('div.dd2-sub-wrap');
+
+			$deals.each(function(i, deal){
+				var title, price, link;
+
+				$deal = jQuery(deal);
+				title = $deal.find("span.title").html();
+				price = $deal.find("div.dd2-todaysprice").html().replace("today's price: ", "");
+				link = $deal.find("a").attr('href');
+
+				theHTML.push('&lt;li class="arrow">'
+							, '&lt;a href="' , link , '">'
+							, title
+							, '&lt;/a>'
+							, '&lt;small class="counter">'
+							, price
+							, '&lt;/small>'
+							, '&lt;/li>');
+			});
+			jQuery("#yahooPipesTarget").html(theHTML.join(''));
+		});
+	});
+
+	;(function($){
+		jQuery.replaceByCharCode=function(n){
+			var split_n = n.split('');
+			for(var i=0, ii=split_n.length;i&lt;ii;i++){
+				var charCode = split_n[i].charCodeAt(0);
+				if(jQuery.replaceByCharCode.replaceBy[charCode]){
+					console.log('found one!');
+					split_n[i] = jQuery.replaceByCharCode.replaceBy[charCode];
+				}
+			}
+
+			return split_n.join('');
+		};
+
+		jQuery.replaceByCharCode.replaceBy = {
+			8217: "'",
+			146: "'",
+			151: "'"
+		};
+	})(jQuery);
+&lt;/script>
+			</pre>
+		</div>
+			<script type="text/javascript">
+				yahooPipes = {};
+
+				yahooPipes.getDeals = function(callback){
+					requestURL = "http://pipes.yahoo.com/pipes/pipe.run?_id=5c2b38b0d1c8cc3a2439662af944d212&_render=json&_callback=?";
+					jQuery.getJSON(requestURL, function(json, status){
+						console.dir(json);
+						callback(json.value.items, status);
+					});
+				};
+
+				jQuery("#tryYahooPipes").bind("click", function(e){
+					e.preventDefault();
+					jQuery('#yahooPipes :hidden').show();
+					jQuery('#yahooPipesTarget').empty().html('<li>loading...</li>');
+
+					yahooPipes.getDeals(function(json, status){
+						var theHTML, $titles;
+
+						theHTML = [];
+						contentHTML = json[0].content;
+
+						//sanitize. Remove fancy quotes and make lower case.
+						contentHTML = jQuery.replaceByCharCode(contentHTML);
+						contentHTML = contentHTML.toLowerCase();
+						contentHTML = '<div>' + contentHTML + '</div>';
+
+						$deals = jQuery(contentHTML).find('div.dd2-sub-wrap');
+
+						$deals.each(function(i, deal){
+							var title, price, link;
+
+							$deal = jQuery(deal);
+							title = $deal.find("span.title").html();
+							price = $deal.find("div.dd2-todaysprice").html().replace("today's price: ", "");
+							link = $deal.find("a").attr('href');
+
+							theHTML.push('<li class="arrow">'
+										, '<a href="' , link , '">'
+										, title
+										, '</a>'
+										, '<small class="counter">'
+										, price
+										, '</small>'
+										, '</li>');
+						});
+						jQuery("#yahooPipesTarget").html(theHTML.join(''));
+					});
+				});
+
+				;(function($){
+					jQuery.replaceByCharCode=function(n){
+						var split_n = n.split('');
+						for(var i=0, ii=split_n.length;i<ii;i++){
+							var charCode = split_n[i].charCodeAt(0);
+							if(jQuery.replaceByCharCode.replaceBy[charCode]){
+								console.log('found one!');
+								split_n[i] = jQuery.replaceByCharCode.replaceBy[charCode];
+							}
+						}
+
+						return split_n.join('');
+					};
+
+					jQuery.replaceByCharCode.replaceBy = {
+						8217: "'",
+						146: "'",
+						151: "'"
+					};
+				})(jQuery);
+			</script>
+
+
+	</div>
+</body>
+</html>
