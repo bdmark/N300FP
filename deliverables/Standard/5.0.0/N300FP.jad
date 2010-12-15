@@ -1,12 +1,14 @@
-RIM-COD-SHA1-4: 5b 89 50 30 f7 ff f2 f2 f6 ae c6 f5 cc e5 9d 8f dd 37 9e 35
-RIM-COD-SHA1-3: 77 e7 56 fb 57 73 5b 74 dc 2b 2c ab 46 e4 1f 3e 60 8a c8 f8
-RIM-COD-SHA1-2: 5d fd 62 89 87 df 6b 05 9b ec c1 5c 78 5a f4 08 c7 ab 96 13
-RIM-COD-SHA1-1: 30 ed 26 4c bc 1f 68 e6 68 b0 a4 a7 5d af 43 19 af 26 eb c3
+RIM-COD-SHA1-4: f9 8f 08 cf 79 ba 53 e4 2b 9d ae 6d ee 8b e6 be d2 c8 06 17
+RIM-COD-SHA1-3: b3 c8 2e a5 41 95 45 2d 46 07 cd e7 63 93 87 af a6 99 26 9a
+RIM-COD-SHA1-2: e6 30 a8 cb 91 38 76 09 15 29 23 fc 3b 7b 90 1f ed b4 d8 cf
+RIM-COD-SHA1-1: 53 f8 a1 e1 38 01 40 8e 7f 37 a6 c3 fc 49 b3 56 1c f9 02 95
 RIM-MIDlet-Flags-1: 0
-MIDlet-Jar-Size: 418399
+MIDlet-Jar-Size: 445544
 MIDlet-Name: N300FP
 MIDlet-Jar-URL: N300FP.jar
 MicroEdition-Configuration: CLDC-1.1
+RIM-COD-URL-9: N300FP-9.cod
+RIM-COD-URL-8: N300FP-8.cod
 RIM-COD-URL-7: N300FP-7.cod
 RIM-COD-Module-Dependencies: net_rim_cldc,net_rim_os,net_rim_bbapi_invoke,net_rim_bb_browser_field_api,net_rim_bbapi_browser,net_rim_pdap,net_rim_locationapi
 RIM-COD-URL-6: N300FP-6.cod
@@ -15,23 +17,27 @@ RIM-COD-URL-4: N300FP-4.cod
 RIM-COD-URL-3: N300FP-3.cod
 RIM-COD-URL-2: N300FP-2.cod
 RIM-COD-URL-1: N300FP-1.cod
-RIM-COD-Size-7: 55900
-RIM-COD-Size-6: 50168
-RIM-COD-Size-5: 56556
-RIM-COD-Size-4: 50652
-RIM-COD-Size-3: 39752
+RIM-COD-Size-9: 47760
+RIM-COD-Size-8: 50204
+RIM-COD-Size-7: 50188
+RIM-COD-Size-6: 52596
+RIM-COD-Size-5: 45564
+RIM-COD-Size-4: 56592
+RIM-COD-Size-3: 52980
 RIM-COD-Module-Name: N300FP
-RIM-COD-Size-2: 58464
-RIM-COD-Size-1: 45284
-RIM-COD-SHA1: dc aa 2a be 13 65 9f 65 44 c8 58 ec be 65 47 d2 a0 80 70 07
-RIM-COD-Size: 60472
+RIM-COD-Size-2: 56800
+RIM-COD-Size-1: 31236
+RIM-COD-SHA1: be ac 35 aa 00 1e ad 60 a3 aa 25 12 74 37 78 cd 62 41 c5 22
+RIM-COD-Size: 35432
 MicroEdition-Profile: MIDP-2.0
 MIDlet-Vendor: BlackBerry Developer
 MIDlet-1: ,,
 RIM-COD-URL: N300FP.cod
 Manifest-Version: 1.0
 MIDlet-Version: 1.0.0
-RIM-COD-SHA1-7: 07 2d 69 c9 5e 89 83 c9 2c 55 fa 40 a7 b7 7c 60 bc 9d 89 cc
-RIM-COD-Creation-Time: 1288231854
-RIM-COD-SHA1-6: 89 5e 5c cf b7 41 21 e0 73 c4 61 41 79 28 95 99 a1 8b 4a c1
-RIM-COD-SHA1-5: ae ca ff b0 5f f9 7b fa 1b 77 c6 68 8b 4d df ef e9 1b a7 07
+RIM-COD-SHA1-9: e4 1d 7f d7 a4 be e4 26 9d 35 cc a1 01 d0 e4 80 29 ab 3d 08
+RIM-COD-SHA1-8: ea e3 3a c1 40 1a af fb 66 66 7a bc 43 26 b7 2b a3 c7 78 44
+RIM-COD-SHA1-7: 43 b2 ca 20 73 dc 9a eb a3 56 3a ab 29 34 69 d9 bd 35 6f 42
+RIM-COD-Creation-Time: 1292432880
+RIM-COD-SHA1-6: a4 76 90 93 90 f7 b5 24 d7 7a 40 2b a3 22 ad a8 20 b3 f3 e1
+RIM-COD-SHA1-5: fa ad fd 06 56 43 93 87 1d 37 49 a5 41 34 a2 cb 7f 5e 33 1c
